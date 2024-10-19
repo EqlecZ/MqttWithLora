@@ -30,7 +30,8 @@ def main() -> int:
     # print(yydoraUnparser(yydoraParser(teststr)))
     while True:
         # print(manager.getReceived())
-        startMqtt.startMqtt(manager.getReceived())
+        if not manager.isReceivedEmpty():
+            startMqtt.startMqtt(manager.getReceived())
         sleep(1)
 
 if __name__ == '__main__':
