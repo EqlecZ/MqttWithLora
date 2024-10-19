@@ -27,17 +27,17 @@ def connect_mqtt():
 
 def publish(client, topic_pub, msg):
     msg_count = 0
-    while True:
-        time.sleep(1)
+    
+    # time.sleep(1)
         # # msg = {'number': msg_count, 'date': datetime.datetime.now().timestamp(), 'temp': random.randrange(20, 25),
         # #        'humi': random.randrange(45, 50), 'illu': random.randrange(3000, 3100)}
-        res = client.publish(topic_pub, json.dumps(msg))
-        status = res[0]
-        if status == 0:
-            print(f"Sent '{msg}' to topic {'topic'}")
-        else:
-            print(f"Failed to send {msg} to topic {'topic'}")
-        msg_count += 1
+    res = client.publish(topic_pub, json.dumps(msg))
+    status = res[0]
+    if status == 0:
+        print(f"Sent '{msg}' to topic {'topic'}")
+    else:
+        print(f"Failed to send {msg} to topic {'topic'}")
+    msg_count += 1
 #进行消息的发送
 
 def subscribe(client: mqtt_client):
