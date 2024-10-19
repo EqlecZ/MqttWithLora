@@ -8,9 +8,9 @@ Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查�
 '''
 from src.mqtt import startMqtt
 from src.yydora.manager import *
-import mqtt
+# import mqtt
 def main() -> int:
-    loraModule = dxlr01('com8', 9600, False)
+    loraModule = dxlr01('/dev/ttyS2', 9600, False)
     manager = YYDoraMessageManager(loraModule)
     # # writeThread = threading.Thread(target=loraModule.writeContinuously, name='continuouslyWrite')
     # # readThread = threading.Thread(target=loraModule.readContinuously, name='continuouslyRead')

@@ -5,7 +5,7 @@ import time
 from src.mqtt import database
 from paho.mqtt import client as mqtt_client
 
-broker = '100.90.224.12'
+broker = '192.168.1.114'
 port = 1883
 topic_pub = "testtopic/1"
 topic_sub = "testtopic/1"

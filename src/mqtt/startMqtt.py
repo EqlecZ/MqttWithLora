@@ -1,11 +1,11 @@
 from time import sleep
 
-import mqttPart
+from src.mqtt.mqttPart import *
 import random
 def startMqtt(text:str):
-    client = mqttPart.connect_mqtt()
+    client = connect_mqtt()
     client.loop_start()
-    ##mqttPart.subscribe(client)
+    ##subscribe(client)
     sleep(1)
-    mqttPart.publish(client, mqttPart.topic_pub, text)
+    publish(client, topic_pub, text)
     client.disconnect()
