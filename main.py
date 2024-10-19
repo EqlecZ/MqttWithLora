@@ -31,7 +31,9 @@ def main() -> int:
     while True:
         # print(manager.getReceived())
         if not manager.isReceivedEmpty():
-            startMqtt.startMqtt(manager.getReceived())
+            recv = manager.getReceived()
+            print(f"***{recv}***")
+            startMqtt.startMqtt(recv)
         sleep(1)
 
 if __name__ == '__main__':
