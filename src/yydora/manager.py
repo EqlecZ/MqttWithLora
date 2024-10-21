@@ -66,7 +66,7 @@ class YYDoraMessageManager:
                 print("***NOT VALID***")
             sleep(0.05)
 
-    def getReceived(self) -> str:
+    def getReceived(self) -> TextPackage:
         self.receiveMutex.acquire(timeout=1)
         if self.receiveQueue.empty():
             self.receiveMutex.release()
@@ -76,7 +76,7 @@ class YYDoraMessageManager:
             self.receiveMutex.release()
             return ret.getText()
 
-    def isReceivedEmpty(self):
+    def isReceivedEmpty(self) -> bool:
         self.receiveMutex.acquire(timeout=1)
         if self.receiveQueue.empty():
             self.receiveMutex.release()
