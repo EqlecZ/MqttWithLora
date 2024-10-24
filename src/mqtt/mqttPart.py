@@ -11,7 +11,7 @@ topic_pub = "testtopic/1"
 topic_sub = "testtopic/1"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 
-def connect_mqtt():
+def connect_mqtt(broker, port, client_id):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
             print("Connected to MQTT Broker!")
@@ -40,7 +40,7 @@ def publish(client, topic_pub, msg):
     msg_count += 1
 #进行消息的发送
 
-def subscribe(client: mqtt_client):
+def subscribe(client: mqtt_client,topic_sub):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
         data = json.loads(msg.payload.decode())#解析Json

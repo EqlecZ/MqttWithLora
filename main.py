@@ -28,6 +28,7 @@ def main() -> int:
     # teststr = "Now we will have a test on long strings. We will test if the time is affordable when calculating crc32 of a long string. "
     # print(yydoraParser(teststr).decode())
     # print(yydoraUnparser(yydoraParser(teststr)))
+
     while True:
         # print(manager.getReceived())
         if not manager.isReceivedEmpty():
