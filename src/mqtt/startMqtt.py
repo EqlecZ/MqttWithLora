@@ -12,5 +12,5 @@ def startMqtt(text: str):
     client.loop_start()
     ##subscribe(client)
     sleep(1)
-    publish(client, topic_pub, text)
+    publish(client, mqttsettings.topic_pub, text)
     client.disconnect()

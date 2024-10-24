@@ -5,12 +5,6 @@ import time
 from src.mqtt import database
 from paho.mqtt import client as mqtt_client
 
-broker = '192.168.1.114'
-port = 1883
-topic_pub = "testtopic/1"
-topic_sub = "testtopic/1"
-client_id = f'python-mqtt-{random.randint(0, 1000)}'
-
 def connect_mqtt(broker, port, client_id):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
