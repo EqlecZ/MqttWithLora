@@ -9,7 +9,7 @@ class MqttConfig:
         self.client_id = client_id
 
     def readSettings(self):
-        with open('config.json','r') as json_file:
+        with open('../../config.json', 'r') as json_file:
             data = json.load(json_file)
             self.broker=(data['broker'])
             self.port=(data['port'])
